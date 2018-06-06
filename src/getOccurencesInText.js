@@ -3,10 +3,10 @@
  * @param {string} text 
  * @returns {array} array of words longer than 2
  */
-export function getWords(text) {
+export function getWords(text, minChars) {
   return text
     .split(/[^A-zÀ-ú-]/)
-    .filter(word => word.length > 2);
+    .filter(word => word.length >= minChars);
 };
 
 /**
@@ -39,8 +39,8 @@ export function lowerWords(words) {
  * @param {boolean} caseSensitive 
  * @returns {object} object containing the occurences count
  */
-export function getOccurencesInText(text, caseSensitive = true) {
+export function getOccurencesInText(text, caseSensitive = true, minChars = 3) {
   return caseSensitive 
-    ? countOccurences(getWords(text))
-    : countOccurences(lowerWords(getWords(text)));
+    ? countOccurences(getWords(text, minChars))
+    : countOccurences(lowerWords(getWords(text, minChars)));
 };

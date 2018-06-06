@@ -2,7 +2,7 @@ import { countOccurences, getOccurencesInText, getWords, lowerWords } from './ge
 
 describe('getWords', () => {
   it('should return an empty object', () => {
-    expect(getWords('')).toEqual([]);
+    expect(getWords('', 3)).toEqual([]);
   });
   
   it('should handle special caracters', () => {
@@ -15,14 +15,14 @@ describe('getWords', () => {
       'ïcëcä'
     ];
     
-    expect(getWords(text)).toEqual(expected);
+    expect(getWords(text, 3)).toEqual(expected);
   });
   
-  it('should ignore words smaller than 3 caracters', () => {
-    const text = 'H He Hey';
-    const expected = ['Hey'];
+  it('should ignore words smaller than 4 caracters', () => {
+    const text = 'H He Hey, Heyy';
+    const expected = ['Heyy'];
     
-    expect(getWords(text)).toEqual(expected);
+    expect(getWords(text, 4)).toEqual(expected);
   });
 });
 
@@ -66,5 +66,15 @@ describe('getOccurencesInText', () => {
     };
     
     expect(getOccurencesInText(text, false)).toEqual(expected);
+  });
+
+  it('should handle words with minimum 4 caracters ', () => {
+    const text = 'He hel hell HeLLo';
+    const expected = {
+      'hell': 1,
+      'HeLLo': 1,
+    };
+    
+    expect(getOccurencesInText(text, true, 4)).toEqual(expected);
   });
 });

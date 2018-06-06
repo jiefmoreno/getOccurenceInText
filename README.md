@@ -1,5 +1,5 @@
 # getOccurencesInText
-The module getOccurencesInText count the words occurence in a text. It ommit the words with less than two caracters.
+The module getOccurencesInText count the words occurence in a text. It ommit the words with less than three caracters by default.
 
 ## Install
 
@@ -37,3 +37,19 @@ you: 1
 }
 */
 ```
+If you want to ommit words with less than four caracters :
+```js
+getOccurencesInText('Hello hello, and nice to meet you', true, 4);
+
+/* 
+result: {
+and: 1,
+hello: 2,
+meet: 1,
+nice: 1,
+you: 1
+}
+*/
+```
+
+

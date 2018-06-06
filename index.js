@@ -18,9 +18,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * @param {string} text 
  * @returns {array} array of words longer than 2
  */
-function getWords(text) {
+function getWords(text, minChars) {
   return text.split(/[^A-zÀ-ú-]/).filter(function (word) {
-    return word.length > 2;
+    return word.length >= minChars;
   });
 };
 
@@ -54,6 +54,7 @@ function lowerWords(words) {
  */
 function getOccurencesInText(text) {
   var caseSensitive = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  var minChars = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3;
 
-  return caseSensitive ? countOccurences(getWords(text)) : countOccurences(lowerWords(getWords(text)));
+  return caseSensitive ? countOccurences(getWords(text, minChars)) : countOccurences(lowerWords(getWords(text, minChars)));
 };
