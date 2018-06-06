@@ -9,7 +9,7 @@ The module getOccurencesInText count the words occurence in a text. It ommit the
 
 You can use it like this: 
 ```js
-const { getOccurencesInText } = require('getOccurenceInText');
+const { getOccurencesInText } = require('getoccurencesintext');
 getOccurencesInText('Hello hello, and nice to meet you'); // by default the function is case sensitive
 
 /* 
