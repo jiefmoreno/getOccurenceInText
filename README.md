@@ -1,8 +1,15 @@
 # getOccurencesInText
 The module getOccurencesInText count the words occurence in a text. It ommit the words with less than two caracters.
 
+## Install
+
+```$ npm install getOccurenceInText```
+
+## Usage
+
 You can use it like this: 
 ```js
+const { getOccurencesInText } = require('getOccurenceInText');
 getOccurencesInText('Hello hello, and nice to meet you'); // by default the function is case sensitive
 
 /* 
