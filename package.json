@@ -1,0 +1,21 @@
+{
+  "name": "getoccurencesintext",
+  "version": "0.1.0",
+  "description": "The module getOccurencesInText count the words occurence in a text. It ommit the words with less than two caracters.",
+  "main": "getOccurencesInText.js",
+  "scripts": {
+    "build": "npx babel ./src/getOccurencesInText.js --out-file index.js",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "author": "JF Moreno",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0"
+  }
+}
