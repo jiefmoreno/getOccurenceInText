@@ -3,7 +3,7 @@ The module getOccurencesInText count the words occurence in a text. It ommit the
 
 ## Install
 
-```$ npm install getOccurenceInText```
+```$ npm i getoccurencesintext```
 
 ## Usage
 
